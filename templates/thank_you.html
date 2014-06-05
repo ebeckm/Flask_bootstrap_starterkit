@@ -1,0 +1,13 @@
+{% extends "_layout.html" %}
+{% block title %} - About{% endblock %}
+{% block content %}
+{% if session.logged_in %}
+    <meta http-equiv="refresh" content="2; url=index">
+<div class="row">
+  <!-- contents for first container -->
+  <div class="col-mid-6">
+    <h2>Thank you!</h2>
+  </div>
+</div>
+{% endif %}
+{% endblock %}

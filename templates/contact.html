@@ -1,0 +1,39 @@
+{% extends "_layout.html" %}
+
+{% block customcss %}
+<link href={{ css.link | safe }} rel="stylesheet">
+{% endblock %}
+
+{% block custombodytags %}
+id="contact"
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <!-- contents for first container -->
+  <div class="col-mid-6">
+    <form  method="post" name="login" class="form-contact" >
+      <h2 class="form-signin-heading">Contact Us</h2>
+      <!-- prompt user for valid email if needed -->
+      {% for message in form.email.errors %}
+      <div class="alert alert-danger"
+	   style="padding: 8px 35px 8px 14px;
+		  background-color: rgb(242, 222, 222);
+		  border: 1px solid rgb(238, 211, 215);
+		  color: rgb(185, 74, 72);">
+	<a class="close" style="color: rgb(0, 136, 204);">×</a>
+	{{ message }}
+      </div>
+      {% endfor %}
+      <!--	   action="{{ url_for('contact') }}">   -->
+      {{ form.hidden_tag() }}
+      {{ form.name(class="form-control", placeholder="Name", autofocus=true, required=true) }}
+      {{ form.email(class="form-control", placeholder="Email", required=true) }}
+      {{ form.subject(class="form-control", placeholder="Subject", required=true) }}
+      {{ form.message(class="form-control", placeholder="Message",
+      rows="10", required=true) }}
+      <button type="submit" class="btn btn-lg btn-primary btn-block">Submit</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
