@@ -7,7 +7,7 @@ and Bootstrap.  The template provides a number of features including:
 
 - A user database with security, built using [Flask-Security](https://pythonhosted.org/Flask-Security/)
 - A live search bar, built using [jQueryUI](http://jqueryui.com/autocomplete/)
-- Responsive style that leverages the Bootstrap CSS framework.
+- Responsive style that leverages [Twitter Bootstrap](http://getbootstrap.com/)
 
 Dependencies
 ------------
